@@ -1,0 +1,21 @@
+{
+  "default":{
+    "poses":{
+    },
+    "name":"Narrator"
+  },
+
+  "alice":{
+    "poses":{
+      "default":"",
+    },
+    "name":"nullchar"
+  },
+
+  "bobby":{
+    "poses":{
+      "default":"img/VN_chara002_neutral.png",
+    },
+    "name":"char a"
+  }
+}
