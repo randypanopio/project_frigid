@@ -7,10 +7,13 @@ The scene display timeline:
 - The player clicks on a choice, usually triggering a change of scene
 */
 //
-var partyCount = 16;
-var powerCount = 10;
-var foodCount = 10;
-var day = 0;
+
+var stats = {
+	partyCount:16,
+	powerCount:10,
+	foodCount:10,
+	day:0
+}
 
 var matsUpdateSubstring = "$";
 var dayUpdateSubstringShort = "$d";
@@ -27,10 +30,21 @@ var dayStringElement = document.getElementById('days');
 var partyStringElement = document.getElementById('party');
 var foodStringElement = document.getElementById('food');
 var powerStringElement = document.getElementById('power');
+
 function onSceneCleared()
 {
-	// day++;
-	// dayStringElement.innerHTML = day;
+	if(stats.foodCount <= 0) {
+		localStorage.setItem('stats_party', stats.partyCount);
+		localStorage.setItem('stats_days', stats.day);
+		location = "endstarve.html";
+		return true;
+	}
+	if(stats.powerCount <= 0) {
+		localStorage.setItem('stats_party', stats.partyCount);
+		localStorage.setItem('stats_days', stats.day);
+		location = "endfreeze.html";
+		return true;
+	}
 	//Custom code that will be executed right after the scene has been cleared from its choices and characters,
 	//before any of the content of the scene is processed.
 }
@@ -53,64 +67,64 @@ function onSceneDisplayed(scene)
 function onChoiceClicked(targetSceneId)
 {
 	if(targetSceneId.toLowerCase().includes(matsUpdateSubstring)) {
-		foodCount -=1;
-		powerCount -=1;
-		foodStringElement.innerHTML = foodCount;
-		powerStringElement.innerHTML = powerCount;
+		stats.foodCount -=1;
+		stats.powerCount -=1;
+		foodStringElement.innerHTML = stats.foodCount;
+		powerStringElement.innerHTML = stats.powerCount;
 	}
 
 	if(targetSceneId.toLowerCase().includes(foodGainSubstring)) {
 		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@fg:") + 4));
-		foodCount += toAdd;
-		foodStringElement.innerHTML = foodCount;
-		console.log(foodCount);
+		stats.foodCount += toAdd;
+		foodStringElement.innerHTML = stats.foodCount;
+		// console.log(stats.foodCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(powerGainSubstring)) {
 		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@pg:") + 4));
-		powerCount += toAdd;
-		powerStringElement.innerHTML = powerCount;
-		console.log(powerCount);
+		stats.powerCount += toAdd;
+		powerStringElement.innerHTML = stats.powerCount;
+		// console.log(stats.powerCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(foodLossSubstring)) {
 		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@fl:") + 4));
-		foodCount -= toLose;
-		foodStringElement.innerHTML = foodCount;
-		console.log(foodCount);
+		stats.foodCount -= toLose;
+		foodStringElement.innerHTML = stats.foodCount;
+		// console.log(stats.foodCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(powerLossSubstring)) {
 		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@pl:") + 4));
-		powerCount -= toLose;
-		powerStringElement.innerHTML = powerCount;
-		console.log(powerCount);
+		stats.powerCount -= toLose;
+		powerStringElement.innerHTML = stats.powerCount;
+		// console.log(stats.powerCount);
 	}
 
 
 	if(targetSceneId.toLowerCase().includes(dayUpdateSubstringShort)){
-		day += getRandomInt(3,4);
-		dayStringElement.innerHTML = day;
+		stats.day += getRandomInt(3,4);
+		dayStringElement.innerHTML = stats.day;
 	} else if (targetSceneId.toLowerCase().includes(dayUpdateSubstringMed)){
-		day += getRandomInt(5,8);
-		dayStringElement.innerHTML = day;
+		stats.day += getRandomInt(5,8);
+		dayStringElement.innerHTML = stats.day;
 	} else if (targetSceneId.toLowerCase().includes(dayUpdateSubstringLong)){
-		day += getRandomInt(10,15);
-		dayStringElement.innerHTML = day;
+		stats.day += getRandomInt(10,15);
+		dayStringElement.innerHTML = stats.day;
 	}
 
 	if(targetSceneId.toLowerCase().includes(deathFlag)){
-		console.log(partyCount);
+		// console.log(stats.partyCount);
 		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf("%die:") + 5));
-		console.log(toRemove);
-		partyCount -= toRemove;
-		partyStringElement.innerHTML = partyCount;
+		// console.log(toRemove);
+		stats.partyCount -= toRemove;
+		partyStringElement.innerHTML = stats.partyCount;
 	}
 
 	if(targetSceneId.toLowerCase().includes(gainFlag)){
 		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("%gain:") + 6));
-		partyCount += toAdd;
-		partyStringElement.innerHTML = partyCount;
+		stats.partyCount += toAdd;
+		partyStringElement.innerHTML = stats.partyCount;
 	}
 
 	//Custom code that will be executed when the player clicks on a choice
@@ -123,6 +137,8 @@ function onChoiceClicked(targetSceneId)
 	//Redirecting the player to an ending page if the target of the choice is called "end"
 	if(targetSceneId.toLowerCase() == "end")
 	{
+		localStorage.setItem('stats_party', stats.partyCount);
+		localStorage.setItem('stats_days', stats.day);
 		location = "end.html";
 		return true;
 	}
