@@ -64,11 +64,11 @@
     padding-right: 5px; }
 
 #placeName {
-  left: calc(50% - 100px);
+  left: calc(50% - 110px);
   width: 200px; }
 
 #party_status {
-  left: calc(50% + 110px);
+  left: calc(50% + 80px);
   width: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,6 +77,20 @@
 #days_status {
   left: calc(50% - 250px);
   width: 100px; }
+
+#food_status {
+  left: calc(50% + 160px);
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+#power_status {
+  left: calc(50% + 230px);
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .choice:hover {
   background-color: rgba(91, 92, 98, 0.55);

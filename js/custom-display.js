@@ -8,14 +8,25 @@ The scene display timeline:
 */
 //
 var partyCount = 16;
+var powerCount = 10;
+var foodCount = 10;
 var day = 0;
+
+var matsUpdateSubstring = "$";
 var dayUpdateSubstringShort = "$d";
 var dayUpdateSubstringMed = "$e";
 var dayUpdateSubstringLong = "$f";
-var deathFlag = "%die:"
-var gainFlag = "%gain:"
+var deathFlag = "%die:";
+var gainFlag = "%gain:";
+var powerGainSubstring = "@pg:";
+var foodGainSubstring = "@fg:";
+var powerLossSubstring = "@pl:";
+var foodLossSubstring = "@fl:";
+
 var dayStringElement = document.getElementById('days');
 var partyStringElement = document.getElementById('party');
+var foodStringElement = document.getElementById('food');
+var powerStringElement = document.getElementById('power');
 function onSceneCleared()
 {
 	// day++;
@@ -41,6 +52,42 @@ function onSceneDisplayed(scene)
 
 function onChoiceClicked(targetSceneId)
 {
+	if(targetSceneId.toLowerCase().includes(matsUpdateSubstring)) {
+		foodCount -=1;
+		powerCount -=1;
+		foodStringElement.innerHTML = foodCount;
+		powerStringElement.innerHTML = powerCount;
+	}
+
+	if(targetSceneId.toLowerCase().includes(foodGainSubstring)) {
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@fg:") + 4));
+		foodCount += toAdd;
+		foodStringElement.innerHTML = foodCount;
+		console.log(foodCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(powerGainSubstring)) {
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@pg:") + 4));
+		powerCount += toAdd;
+		powerStringElement.innerHTML = powerCount;
+		console.log(powerCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(foodLossSubstring)) {
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@fl:") + 4));
+		foodCount -= toLose;
+		foodStringElement.innerHTML = foodCount;
+		console.log(foodCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(powerLossSubstring)) {
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@pl:") + 4));
+		powerCount -= toLose;
+		powerStringElement.innerHTML = powerCount;
+		console.log(powerCount);
+	}
+
+
 	if(targetSceneId.toLowerCase().includes(dayUpdateSubstringShort)){
 		day += getRandomInt(3,4);
 		dayStringElement.innerHTML = day;
@@ -54,14 +101,14 @@ function onChoiceClicked(targetSceneId)
 
 	if(targetSceneId.toLowerCase().includes(deathFlag)){
 		console.log(partyCount);
-		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf(":") + 1));
+		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf("%die:") + 5));
+		console.log(toRemove);
 		partyCount -= toRemove;
 		partyStringElement.innerHTML = partyCount;
 	}
 
 	if(targetSceneId.toLowerCase().includes(gainFlag)){
-		console.log(partyCount);
-		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(":") + 1));
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("%gain:") + 6));
 		partyCount += toAdd;
 		partyStringElement.innerHTML = partyCount;
 	}
