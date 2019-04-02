@@ -35,7 +35,7 @@ function onChoiceClicked(targetSceneId)
 	//In any case, this function needs to return false for the default behaviour to be executed.
 	//The default behaviour is to display the scene that has targetSceneId as its identifier.
 	//If you've done something else and want to prevent the scene from displaying, return true instead.
-	
+
 	//Example of a custom behaviour upon clicking on a choice:
 	//Redirecting the player to an ending page if the target of the choice is called "end"
 	if(targetSceneId.toLowerCase() == "end")

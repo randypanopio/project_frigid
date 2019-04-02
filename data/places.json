@@ -1,6 +1,62 @@
 {
-	"street" : {
+	"california" : {
 		"name":"California",
     	"image":"img/VN_scene001.png"
+    },
+	"a2_santabarbara" : {
+		"name":"SantaBarbara",
+    	"image":"img/a2_santabarbara.png"
+    },
+	"a3_losangeles" : {
+		"name":"LosAngeles",
+    	"image":"img/a3_losangeles.png"
+    },
+	"a4_losangeles" : {
+		"name":"LosAngeles",
+    	"image":"img/a4_losangeles.png"
+    },
+	"a5_tijuana" : {
+		"name":"Tijuana",
+    	"image":"img/a5_tijuana.png"
+    },
+	"a6_baja" : {
+		"name":"Baja",
+    	"image":"img/a6_baja.png"
+    },
+	"a7_california" : {
+		"name":"GulfOfCalifornia",
+    	"image":"img/a7_california.png"
+    },
+	"a8a_sonora" : {
+		"name":"Sonora",
+    	"image":"img/a8a_sonora.png"
+    },
+	"a8a2_sonora" : {
+		"name":"Sonora",
+    	"image":"img/a8a2_sonora.png"
+    },
+	"a8b_california" : {
+		"name":"GulfOfCalifornia",
+    	"image":"img/a8b_california.png"
+    },
+	"a8b2_california" : {
+		"name":"GulfOfCalifornia",
+    	"image":"img/a8b2_california.png"
+    },
+	"a9_sinaloa" : {
+		"name":"Sinaloa",
+    	"image":"img/a9_sinaloa.png"
+    },
+	"a10_sinaloa" : {
+		"name":"Sinaloa",
+    	"image":"img/a10_sinaloa.png"
+    },
+	"a11_sinaloa" : {
+		"name":"Bunker",
+    	"image":"img/a11_sinaloa.png"
+    },
+	"a12_sinaloa" : {
+		"name":"Bunker",
+    	"image":"img/a12_sinaloa.png"
     }
 }
