@@ -4,7 +4,8 @@ var defaultStats = {
   partyCount:16,
 	powerCount:10,
 	foodCount:10,
-	day:0
+	day:0,
+  hasScientist:false
 }
 
 function loadStats(){

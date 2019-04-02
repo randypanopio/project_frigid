@@ -12,7 +12,8 @@ var stats = {
 	partyCount:16,
 	powerCount:10,
 	foodCount:10,
-	day:0
+	day:0,
+	hasScientist:false
 }
 
 var matsUpdateSubstring = "$";
@@ -25,6 +26,7 @@ var powerGainSubstring = "@pg:";
 var foodGainSubstring = "@fg:";
 var powerLossSubstring = "@pl:";
 var foodLossSubstring = "@fl:";
+var gainScientist = "&sci";
 
 var dayStringElement = document.getElementById('days');
 var partyStringElement = document.getElementById('party');
@@ -66,6 +68,11 @@ function onSceneDisplayed(scene)
 
 function onChoiceClicked(targetSceneId)
 {
+	if(targetSceneId.toLowerCase().includes(gainScientist)){
+			stats.gainScientist = true;
+			console.log("got scientist")
+	}
+
 	if(targetSceneId.toLowerCase().includes(matsUpdateSubstring)) {
 		stats.foodCount -=1;
 		stats.powerCount -=1;

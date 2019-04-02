@@ -142,7 +142,7 @@
 	{
 		"title": "A12",
 		"tags": "",
-		"body": "<<place a12_sinaloa>>{{bunker_scientist}}\r\n\r\n[[“Try to convince the scientist to join our cause. There is nothing left for him here, only death. Perhaps he can find answers at Fortaleza.” |A12@fg:2]]\r\n[[“Continue forwards and respect the man’s mission. We do not have the right to drag him out of his last remaining wishes, especially in this god forsaken world” |A13$e@fg:2]]",
+		"body": "<<place a12_sinaloa>>{{bunker_scientist}}\r\n\r\n[[“Try to convince the scientist to join our cause. There is nothing left for him here, only death. Perhaps he can find answers at Fortaleza.” |A12&sci@fg:2]]\r\n[[“Continue forwards and respect the man’s mission. We do not have the right to drag him out of his last remaining wishes, especially in this god forsaken world” |A13$e@fg:2]]",
 		"position": {
 			"x": 1989,
 			"y": -478
@@ -180,7 +180,7 @@
 		"colorID": 0
 	},
 	{
-		"title": "A12@fg:2",
+		"title": "A12&sci@fg:2",
 		"tags": "",
 		"body": "<<place e_generic_gain>>\r\n\r\n[[“Our new friend will be a priceless asset for the group in the future” |A13$e%gain:1]]",
 		"position": {
@@ -332,20 +332,60 @@
 	{
 		"title": "C10$e",
 		"tags": "",
-		"body": "[[End |end]]",
+		"body": "<<place >>\r\n\r\n[[“The group decides there is no hope, opting to end their journey here: a group suicide, a painless death.” |C11A]]\r\n[[“The group decides to move forward without food or energy and let nature decide their fate.” |C11B]]\r\n",
 		"position": {
-			"x": 130,
-			"y": 2388
+			"x": 163,
+			"y": 2397
 		},
 		"colorID": 0
 	},
 	{
 		"title": "B1",
 		"tags": "",
-		"body": "[[cont to C |C1]]",
+		"body": "{{default}}\r\n\r\n[[“After spending a few hours getting used to the environment and feeding themselves, the group packs up and continue towards Fortaleza.” |C1]]",
 		"position": {
-			"x": -2228,
-			"y": 900
+			"x": -2265,
+			"y": 1192
+		},
+		"colorID": 0
+	},
+	{
+		"title": "C11A",
+		"tags": "",
+		"body": "<<place >>\r\n\r\n[[ |C12]]",
+		"position": {
+			"x": 420,
+			"y": 2176
+		},
+		"colorID": 0
+	},
+	{
+		"title": "C11B",
+		"tags": "",
+		"body": "<<place >>\r\n\r\n[[ |C12]]\r\n",
+		"position": {
+			"x": 463,
+			"y": 2591
+		},
+		"colorID": 0
+	},
+	{
+		"title": "C12",
+		"tags": "",
+		"body": "<<place >>\r\n\r\n[[ |C13]]",
+		"position": {
+			"x": 742,
+			"y": 2398
+		},
+		"colorID": 0
+	},
+	{
+		"title": "C13",
+		"tags": "",
+		"body": "<<place >>\r\n\r\n[[ |end]]",
+		"position": {
+			"x": 996,
+			"y": 2375
 		},
 		"colorID": 0
 	}
