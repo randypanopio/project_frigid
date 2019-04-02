@@ -78,12 +78,12 @@ $debug-color: #ace;
 
 #placeName
 {
-  left:calc(50% - 100px);
+  left:calc(50% - 110px);
 	width: 200px;
 }
 
 #party_status {
-  left:calc(50% + 110px);
+  left:calc(50% + 80px);
   width: 50px;
   display: flex;
 }
@@ -91,6 +91,18 @@ $debug-color: #ace;
 #days_status {
   left:calc(50% - 250px);
   width: 100px
+}
+
+#food_status {
+  left:calc(50% + 160px);
+  width: 50px;
+  display: flex;
+}
+
+#power_status {
+  left:calc(50% + 230px);
+  width: 50px;
+  display: flex;
 }
 
 .choice:hover
