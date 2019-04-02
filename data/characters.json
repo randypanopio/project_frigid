@@ -2,7 +2,7 @@
   "default":{
     "poses":{
     },
-    "name":"Narrator"
+    "name":""
   },
 
   "nullchar":{
@@ -10,5 +10,11 @@
       "default":"",
     },
     "name":"The Group"
+  },
+  "bunker_scientist":{
+    "poses":{
+      "default":"",
+    },
+    "name":"Scientist"
   }
 }

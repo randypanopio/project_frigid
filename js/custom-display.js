@@ -8,8 +8,43 @@ The scene display timeline:
 */
 //
 
+var stats = {
+	partyCount:16,
+	powerCount:10,
+	foodCount:10,
+	day:0
+}
+
+var matsUpdateSubstring = "$";
+var dayUpdateSubstringShort = "$d";
+var dayUpdateSubstringMed = "$e";
+var dayUpdateSubstringLong = "$f";
+var deathFlag = "%die:";
+var gainFlag = "%gain:";
+var powerGainSubstring = "@pg:";
+var foodGainSubstring = "@fg:";
+var powerLossSubstring = "@pl:";
+var foodLossSubstring = "@fl:";
+
+var dayStringElement = document.getElementById('days');
+var partyStringElement = document.getElementById('party');
+var foodStringElement = document.getElementById('food');
+var powerStringElement = document.getElementById('power');
+
 function onSceneCleared()
 {
+	if(stats.foodCount <= 0) {
+		localStorage.setItem('stats_party', stats.partyCount);
+		localStorage.setItem('stats_days', stats.day);
+		location = "endstarve.html";
+		return true;
+	}
+	if(stats.powerCount <= 0) {
+		localStorage.setItem('stats_party', stats.partyCount);
+		localStorage.setItem('stats_days', stats.day);
+		location = "endfreeze.html";
+		return true;
+	}
 	//Custom code that will be executed right after the scene has been cleared from its choices and characters,
 	//before any of the content of the scene is processed.
 }
@@ -31,6 +66,67 @@ function onSceneDisplayed(scene)
 
 function onChoiceClicked(targetSceneId)
 {
+	if(targetSceneId.toLowerCase().includes(matsUpdateSubstring)) {
+		stats.foodCount -=1;
+		stats.powerCount -=1;
+		foodStringElement.innerHTML = stats.foodCount;
+		powerStringElement.innerHTML = stats.powerCount;
+	}
+
+	if(targetSceneId.toLowerCase().includes(foodGainSubstring)) {
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@fg:") + 4));
+		stats.foodCount += toAdd;
+		foodStringElement.innerHTML = stats.foodCount;
+		// console.log(stats.foodCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(powerGainSubstring)) {
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@pg:") + 4));
+		stats.powerCount += toAdd;
+		powerStringElement.innerHTML = stats.powerCount;
+		// console.log(stats.powerCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(foodLossSubstring)) {
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@fl:") + 4));
+		stats.foodCount -= toLose;
+		foodStringElement.innerHTML = stats.foodCount;
+		// console.log(stats.foodCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(powerLossSubstring)) {
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@pl:") + 4));
+		stats.powerCount -= toLose;
+		powerStringElement.innerHTML = stats.powerCount;
+		// console.log(stats.powerCount);
+	}
+
+
+	if(targetSceneId.toLowerCase().includes(dayUpdateSubstringShort)){
+		stats.day += getRandomInt(3,4);
+		dayStringElement.innerHTML = stats.day;
+	} else if (targetSceneId.toLowerCase().includes(dayUpdateSubstringMed)){
+		stats.day += getRandomInt(5,8);
+		dayStringElement.innerHTML = stats.day;
+	} else if (targetSceneId.toLowerCase().includes(dayUpdateSubstringLong)){
+		stats.day += getRandomInt(10,15);
+		dayStringElement.innerHTML = stats.day;
+	}
+
+	if(targetSceneId.toLowerCase().includes(deathFlag)){
+		// console.log(stats.partyCount);
+		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf("%die:") + 5));
+		// console.log(toRemove);
+		stats.partyCount -= toRemove;
+		partyStringElement.innerHTML = stats.partyCount;
+	}
+
+	if(targetSceneId.toLowerCase().includes(gainFlag)){
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("%gain:") + 6));
+		stats.partyCount += toAdd;
+		partyStringElement.innerHTML = stats.partyCount;
+	}
+
 	//Custom code that will be executed when the player clicks on a choice
 	//targetSceneId can be an actual scene identifier, but it could also be a special value that you want to catch instead!
 	//In any case, this function needs to return false for the default behaviour to be executed.
@@ -41,9 +137,18 @@ function onChoiceClicked(targetSceneId)
 	//Redirecting the player to an ending page if the target of the choice is called "end"
 	if(targetSceneId.toLowerCase() == "end")
 	{
+		localStorage.setItem('stats_party', stats.partyCount);
+		localStorage.setItem('stats_days', stats.day);
 		location = "end.html";
 		return true;
 	}
 
 	return false;
+}
+
+// retrieve random int
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
