@@ -4,85 +4,85 @@
 		"tags": "",
 		"body": "<<place california>>{{nullchar}}\r\n\r\n[[Begin the struggle |A2]]\r\n",
 		"position": {
-			"x": -130,
-			"y": 63
+			"x": -526,
+			"y": -14
 		},
 		"colorID": 0
 	},
 	{
 		"title": "A2",
 		"tags": "",
-		"body": "<<place a2_santabarbara>>{{nullchar}}\r\n\r\n[[Continue |A3]]",
+		"body": "<<place a2_santabarbara>>{{nullchar}}\r\n\r\n[[Continue |A3A]]",
 		"position": {
-			"x": 91,
-			"y": 84
+			"x": -226,
+			"y": 16
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A3",
+		"title": "A3A",
 		"tags": "",
-		"body": "<<place a3_losangeles>>\r\n\r\n[[“Take the bundle of battery rods” |A4A]]\r\n[[“Take the stash of dried food” |A4A]]",
+		"body": "<<place a3a_santabarbara>>{{nullchar}}\r\n\r\n[[“Whether all of us wanted to do this or not, it’s bound to happen sooner or later. Anyways, any supplies ought to help us later on” |A3B]]",
 		"position": {
-			"x": 310,
-			"y": -63
+			"x": 8,
+			"y": 17
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A4A",
+		"title": "A4A$d",
 		"tags": "",
-		"body": "<<place a4_losangeles>>\r\n\r\n[[Head towards Mexico |A5]]",
+		"body": "<<place a4_losangeles>>\r\n\r\n[[“Head towards Mexico” |A5$e]]\r\n",
 		"position": {
-			"x": 565,
-			"y": -107
+			"x": 595,
+			"y": -169
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A5",
+		"title": "A5$e",
 		"tags": "",
-		"body": "<<place a5_tijuana>>\r\n\r\n[[“It’s for the best to cut ties now before morale worsens. The group decide to split their resource and send them back to Santa Barbara.” |A6]]\r\n[[“It’s too early to quit now, turning back will only inevitably end in death. The group convinces the stragglers that they must continue their mission if they are to survive.” |A6]]\r\n",
+		"body": "[[“It’s for the best to cut ties now before morale worsens. The group decide to split their resource and send them back to Santa Barbara.” |A5%die:3]]\r\n[[“It’s too early to quit now, turning back will only inevitably end in death. The group convinces the stragglers that they must continue their mission if they are to survive.” |A6$d]]",
 		"position": {
-			"x": 854,
-			"y": 58
+			"x": 735,
+			"y": 159
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A6",
+		"title": "A6$d",
 		"tags": "",
-		"body": "<<place a6_baja>>\r\n\r\n[[Continue |A7]]",
+		"body": "<<place a6_baja>>\r\n\r\n[[Continue |A7$d]]\r\n",
 		"position": {
-			"x": -77,
-			"y": 299
+			"x": -274,
+			"y": 253
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A7",
+		"title": "A7$d",
 		"tags": "",
-		"body": "<<place a7_california>>\r\n\r\n[[“Turn around and take the route towards the Sonora inland. We do not want to take any unnecessary risks” |A8A]]\r\n[[“Cut through the gulf, we’ve taken similar detours back in the border, there is no time to waste.” |A8B]]",
+		"body": "<<place a7_california>>\r\n\r\n[[“Turn around and take the route towards the Sonora inland. We do not want to take any unnecessary risks” |A8A$e]]\r\n[[“Cut through the gulf, we’ve taken similar detours back in the border, there is no time to waste.” |A8B$e]]\r\n",
 		"position": {
-			"x": 235,
-			"y": 477
+			"x": -9,
+			"y": 417
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A8A",
+		"title": "A8A$e",
 		"tags": "",
-		"body": "<<place a8a_sonora>>\r\n\r\n[[“Begin preparations to climb the mountain face” |A8A2]]",
+		"body": "<<place a8a_sonora>>\r\n\r\n[[“Begin preparations to climb the mountain face” |A8A2%die:1]]\r\n",
 		"position": {
-			"x": 466,
-			"y": 393
+			"x": 368,
+			"y": 346
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A8A2",
+		"title": "A8A2%die:1",
 		"tags": "",
-		"body": "<<place a8a2_sonora>>\r\n\r\n[[“The group must push on. Their valiance will be remembered.” |A9]]",
+		"body": "<<place a8a2_sonora>>\r\n\r\n[[“The group must push on. Their valiance will be remembered.” |A9$e]]",
 		"position": {
 			"x": 735,
 			"y": 370
@@ -90,32 +90,32 @@
 		"colorID": 0
 	},
 	{
-		"title": "A8B",
+		"title": "A8B$e",
 		"tags": "",
-		"body": "<<place a8b_california>>\r\n\r\n[[Continue |A8B2]]",
+		"body": "<<place a8b_california>>\r\n\r\n[[Continue |A8B2%die:1]]",
 		"position": {
-			"x": 496,
-			"y": 664
+			"x": 337,
+			"y": 639
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A8B2",
+		"title": "A8B2%die:1",
 		"tags": "",
-		"body": "<<place a8b2_california>>\r\n\r\n[[“The group has to run before engulfing more members. Their courage will forever be remembered” |A9]]",
+		"body": "<<place a8b2_california>>\r\n\r\n[[“The group has to run before engulfing more members. Their courage will forever be remembered” |A9$e]]\r\n",
 		"position": {
 			"x": 783,
-			"y": 698
+			"y": 697
 		},
 		"colorID": 0
 	},
 	{
-		"title": "A9",
+		"title": "A9$e",
 		"tags": "",
-		"body": "<<place a9_sinaloa>>\r\n\r\n[[“The group digs in the snow and sets camp. Some desperately needed rest was needed, and nearly everyone passes out immediately.” |A10]]",
+		"body": "<<place a9_sinaloa>>\r\n\r\n[[“The group digs in the snow and sets camp. Some desperately needed rest was needed, and nearly everyone passes out immediately.” |A10]]\r\n",
 		"position": {
 			"x": 1018,
-			"y": 429
+			"y": 427
 		},
 		"colorID": 0
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "<<place a10_sinaloa>>\r\n\r\n[[“Investigate and enter the bunker” |A11]]",
 		"position": {
-			"x": 1261,
-			"y": 385
+			"x": 1295,
+			"y": 443
 		},
 		"colorID": 0
 	},
@@ -146,6 +146,26 @@
 		"position": {
 			"x": 1839,
 			"y": 377
+		},
+		"colorID": 0
+	},
+	{
+		"title": "A3B",
+		"tags": "",
+		"body": "<<place a3b_santabarbara>>\r\n\r\n[[“Take the bundle of battery rods” |A4A$d]]\r\n[[“Take the stash of dried food” |A4A$d]]\r\n",
+		"position": {
+			"x": 240,
+			"y": -85
+		},
+		"colorID": 0
+	},
+	{
+		"title": "A5%die:3",
+		"tags": "",
+		"body": "<<place e_generic_leave>>\r\n\r\n[[“It’s a shame but we most move forward” |A6$d]]\r\n",
+		"position": {
+			"x": 391,
+			"y": 78
 		},
 		"colorID": 0
 	}
