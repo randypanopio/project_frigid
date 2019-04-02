@@ -113,7 +113,7 @@ var characters =
 	{
 		"title": "A4A",
 		"tags": "",
-		"body": "<<place a4_losangeles>>\r\n\r\n[[“Head towards Mexico” |A5]]",
+		"body": "<<place a4_losangeles>>\r\n\r\n[[Head towards Mexico |A5]]",
 		"position": {
 			"x": 565,
 			"y": -107
@@ -213,7 +213,7 @@ var characters =
 	{
 		"title": "A11",
 		"tags": "",
-		"body": "<<place a11_sinaloa>>\r\n\r\n[[“Interrupt him” |A12]]",
+		"body": "<<place a11_sinaloa>>\r\n\r\n[[Interrupt him |A12]]",
 		"position": {
 			"x": 1515,
 			"y": 388
