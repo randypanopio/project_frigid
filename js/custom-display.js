@@ -7,9 +7,19 @@ The scene display timeline:
 - The player clicks on a choice, usually triggering a change of scene
 */
 //
-
+var partyCount = 16;
+var day = 0;
+var dayUpdateSubstringShort = "$d";
+var dayUpdateSubstringMed = "$e";
+var dayUpdateSubstringLong = "$f";
+var deathFlag = "%die:"
+var gainFlag = "%gain:"
+var dayStringElement = document.getElementById('days');
+var partyStringElement = document.getElementById('party');
 function onSceneCleared()
 {
+	// day++;
+	// dayStringElement.innerHTML = day;
 	//Custom code that will be executed right after the scene has been cleared from its choices and characters,
 	//before any of the content of the scene is processed.
 }
@@ -31,6 +41,31 @@ function onSceneDisplayed(scene)
 
 function onChoiceClicked(targetSceneId)
 {
+	if(targetSceneId.toLowerCase().includes(dayUpdateSubstringShort)){
+		day += getRandomInt(3,4);
+		dayStringElement.innerHTML = day;
+	} else if (targetSceneId.toLowerCase().includes(dayUpdateSubstringMed)){
+		day += getRandomInt(5,8);
+		dayStringElement.innerHTML = day;
+	} else if (targetSceneId.toLowerCase().includes(dayUpdateSubstringLong)){
+		day += getRandomInt(10,15);
+		dayStringElement.innerHTML = day;
+	}
+
+	if(targetSceneId.toLowerCase().includes(deathFlag)){
+		console.log(partyCount);
+		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf(":") + 1));
+		partyCount -= toRemove;
+		partyStringElement.innerHTML = partyCount;
+	}
+
+	if(targetSceneId.toLowerCase().includes(gainFlag)){
+		console.log(partyCount);
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(":") + 1));
+		partyCount += toAdd;
+		partyStringElement.innerHTML = partyCount;
+	}
+
 	//Custom code that will be executed when the player clicks on a choice
 	//targetSceneId can be an actual scene identifier, but it could also be a special value that you want to catch instead!
 	//In any case, this function needs to return false for the default behaviour to be executed.
@@ -46,4 +81,11 @@ function onChoiceClicked(targetSceneId)
 	}
 
 	return false;
+}
+
+// retrieve random int
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

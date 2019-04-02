@@ -15,7 +15,7 @@ $debug-color: #ace;
     position: absolute;
     width: 1280px;
     height: 720px;
-    background-image:url('../img/overlay1.png');
+    background-image:url('../img/overlay.png');
     background-size:100% 100%;
   }
   #sceneContent {
@@ -58,22 +58,41 @@ $debug-color: #ace;
 	font-size:22px;
 	text-shadow:2px 2px 3px black;
 }
-#placeName
-{
-	position:absolute;
+
+.status {
+  position:absolute;
 	top:-1px;
-	left:calc(50% - 100px);
 	font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   font-size: 22px;
 	color: black;
-  width: 200px;
   top: 10px;
   text-align: center;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 	background-color: none;
+  .fas {
+    padding-right: 5px;
+  }
 }
+
+#placeName
+{
+  left:calc(50% - 100px);
+	width: 200px;
+}
+
+#party_status {
+  left:calc(50% + 110px);
+  width: 50px;
+  display: flex;
+}
+
+#days_status {
+  left:calc(50% - 250px);
+  width: 100px
+}
+
 .choice:hover
 {
 	background-color: rgba(91, 92, 98, 0.55);
