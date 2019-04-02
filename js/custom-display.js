@@ -6,6 +6,7 @@ The scene display timeline:
 - The conditions on every choice are evaluated, and the available choices are displayed
 - The player clicks on a choice, usually triggering a change of scene
 */
+//
 
 function onSceneCleared()
 {

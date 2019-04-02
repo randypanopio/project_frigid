@@ -4,20 +4,26 @@
 #container {
   font-size: 17px;
   font-family: 'Playfair Display', sans-serif;
-  width: 800px;
-  height: 600px;
+  width: 1280;
+  height: 720px;
   border: 8px solid rgba(0, 0, 0, 0.3);
   border-radius: 8px; }
+  #container #overlay {
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    background-image: url("../img/overlay1.png");
+    background-size: 100% 100%; }
+  #container #sceneContent {
+    top: 0; }
 
 #choices {
   position: absolute;
   bottom: 0px;
-  padding: 10px;
-  padding-top: 0px;
-  width: 780px;
-  left: 0px;
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(0, 0, 0, 0.8); }
+  padding: 0;
+  padding-bottom: 25px;
+  width: 100%;
+  left: 0px; }
 
 .choice {
   cursor: pointer;
@@ -27,8 +33,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 5px;
-  color: #bebebe; }
+  padding: 10px;
+  margin: 10px 100px;
+  color: #ffffff;
+  height: 90px;
+  border: 2px solid rgba(210, 210, 214, 0.55);
+  border-radius: 9px;
+  background-color: rgba(45, 46, 50, 0.55); }
 
 #characterName {
   font-family: 'Open Sans';
@@ -40,13 +51,18 @@
 #placeName {
   position: absolute;
   top: -1px;
-  left: 6px;
-  font-family: 'Open Sans';
-  color: white;
-  padding: 3px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(0, 0, 0, 0.8); }
+  left: calc(50% - 100px);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: black;
+  width: 200px;
+  top: 10px;
+  text-align: center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: none; }
 
 .choice:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(91, 92, 98, 0.55);
   color: white; }
