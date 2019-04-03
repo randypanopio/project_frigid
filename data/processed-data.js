@@ -173,6 +173,74 @@ var characters =
     "b13_tunnel" : {
         "name":"PowerGrid",
         "image":"img/b13_tunnel.png"
+    },
+    "b13_tunnel" : {
+        "name":"PowerGrid",
+        "image":"img/b13_tunnel.png"
+    },
+    "c1_brazil" : {
+        "name":"Brazil",
+        "image":"img/c1_brazil.png"
+    },
+    "c2_brazil" : {
+        "name":"TheAmazon",
+        "image":"img/c2_brazil.png"
+    },
+    "c3_theamazon" : {
+        "name":"TheAmazon",
+        "image":"img/c3_theamazon.png"
+    },
+    "c4a_theamazon" : {
+        "name":"TheAmazon",
+        "image":"img/c4a_theamazon.png"
+    },
+    "c4b_theamazon" : {
+        "name":"TheAmazon",
+        "image":"img/c4b_theamazon.png"
+    },
+    "c5_brazil" : {
+        "name":"Brazil",
+        "image":"img/c5_brazil.png"
+    },
+    "c6_brazil" : {
+        "name":"Brazil",
+        "image":"img/c6_brazil.png"
+    },
+    "c7_urdaneta" : {
+        "name":"Urdaneta",
+        "image":"img/c7_urdaneta.png"
+    },
+    "c8_urdaneta" : {
+        "name":"Urdaneta",
+        "image":"img/c8_urdaneta.png"
+    },
+    "c9_urdaneta" : {
+        "name":"Urdaneta",
+        "image":"img/c9_urdaneta.png"
+    },
+    "c9a_urdaneta" : {
+        "name":"Brazil",
+        "image":"img/c9a_urdaneta.png"
+    },
+    "c10_brazil" : {
+        "name":"Brazil",
+        "image":"img/c10_brazil.png"
+    },
+    "c11a_brazil" : {
+        "name":"Brazil",
+        "image":"img/c11a_brazil.png"
+    },
+    "c11b_brazil" : {
+        "name":"Brazil",
+        "image":"img/c11b_brazil.png"
+    },
+    "c12_fortaleza" : {
+        "name":"Fortaleza",
+        "image":"img/c12_fortaleza.png"
+    },
+    "c13_fortaleza" : {
+        "name":"Fortaleza",
+        "image":"img/c13_fortaleza.png"
     }
 }
 ; 
@@ -211,7 +279,7 @@ var characters =
 	{
 		"title": "A4A$d@fg:3",
 		"tags": "",
-		"body": "<<place a4_losangeles>>\r\n\r\n[[“Head towards Mexico” |A5$e]]\r\n",
+		"body": "<<place a4a_losangeles>>\r\n\r\n[[“Head towards Mexico” |A5$e]]\r\n",
 		"position": {
 			"x": -966,
 			"y": -23
@@ -351,7 +419,7 @@ var characters =
 	{
 		"title": "A4A$d@pg:3",
 		"tags": "",
-		"body": "<<place a4_losangeles>>\r\n\r\n[[“Head towards Mexico” |A5$e]]\r\n",
+		"body": "<<place a4a_losangeles>>\r\n\r\n[[“Head towards Mexico” |A5$e]]\r\n",
 		"position": {
 			"x": -984,
 			"y": -357
@@ -571,7 +639,7 @@ var characters =
 	{
 		"title": "A9A",
 		"tags": "",
-		"body": "<<place b5_oaxaca>>{{default}}\r\n\r\n[[Keep going |A10@bg:3]]",
+		"body": "<<place e_generic_scavenge>>{{default}}\r\n\r\n[[Keep going |A10@bg:3]]\r\n",
 		"position": {
 			"x": 1447,
 			"y": -303
@@ -623,8 +691,8 @@ var characters =
 		"tags": "",
 		"body": "<<place b4_oaxaca>>{{default}}\r\n\r\n[[These dogs are most likely to die soon on their own. We can kill them here to rid of their misery, we can even used them for food. |B4A@fg:4]]\r\n[[These dogs are going to die alone and need someone to take care of them. We should adopt the dogs. |B4A&dog%gain:2]]",
 		"position": {
-			"x": -1199,
-			"y": 902
+			"x": -1170,
+			"y": 935
 		},
 		"colorID": 0
 	},
@@ -651,7 +719,7 @@ var characters =
 	{
 		"title": "B5@bg:1",
 		"tags": "",
-		"body": "<<place b5_honduras>>{{default}}\r\n\r\n[[The group decides to accept their offer and take it as a chance to recover from all the ordeal they have been through. |B5A@bg:-2]]\r\n[[The group does not know anything about these people and decided not to push their luck. The group declines and decide to push on with their mission.  |B6$d]]",
+		"body": "<<place b5_honduras>>{{default}}\n\n[[The group decides to accept their offer and take it as a chance to recover from all the ordeal they have been through. |B5A@bg:-2]]\n[[The group does not know anything about these people and decided not to push their luck. The group declines and decide to push on with their mission.  |B6$d]]",
 		"position": {
 			"x": -575,
 			"y": 903
@@ -723,8 +791,8 @@ var characters =
 		"tags": "",
 		"body": "<<place b9_tunnel>>{{smuggler}}\r\n\r\n[[It looks like we have no choice but to be his “customer”. “We gave you money, what do you want from us?” |B10]]\r\n",
 		"position": {
-			"x": -46,
-			"y": 1225
+			"x": -92,
+			"y": 1268
 		},
 		"colorID": 0
 	},
