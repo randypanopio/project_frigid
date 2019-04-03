@@ -150,5 +150,73 @@
     "b13_tunnel" : {
         "name":"PowerGrid",
         "image":"img/b13_tunnel.png"
+    },
+    "b13_tunnel" : {
+        "name":"PowerGrid",
+        "image":"img/b13_tunnel.png"
+    },
+    "c1_brazil" : {
+        "name":"Brazil",
+        "image":"img/c1_brazil.png"
+    },
+    "c2_brazil" : {
+        "name":"TheAmazon",
+        "image":"img/c2_brazil.png"
+    },
+    "c3_theamazon" : {
+        "name":"TheAmazon",
+        "image":"img/c3_theamazon.png"
+    },
+    "c4a_theamazon" : {
+        "name":"TheAmazon",
+        "image":"img/c4a_theamazon.png"
+    },
+    "c4b_theamazon" : {
+        "name":"TheAmazon",
+        "image":"img/c4b_theamazon.png"
+    },
+    "c5_brazil" : {
+        "name":"Brazil",
+        "image":"img/c5_brazil.png"
+    },
+    "c6_brazil" : {
+        "name":"Brazil",
+        "image":"img/c6_brazil.png"
+    },
+    "c7_urdaneta" : {
+        "name":"Urdaneta",
+        "image":"img/c7_urdaneta.png"
+    },
+    "c8_urdaneta" : {
+        "name":"Urdaneta",
+        "image":"img/c8_urdaneta.png"
+    },
+    "c9_urdaneta" : {
+        "name":"Urdaneta",
+        "image":"img/c9_urdaneta.png"
+    },
+    "c9a_urdaneta" : {
+        "name":"Brazil",
+        "image":"img/c9a_urdaneta.png"
+    },
+    "c10_brazil" : {
+        "name":"Brazil",
+        "image":"img/c10_brazil.png"
+    },
+    "c11a_brazil" : {
+        "name":"Brazil",
+        "image":"img/c11a_brazil.png"
+    },
+    "c11b_brazil" : {
+        "name":"Brazil",
+        "image":"img/c11b_brazil.png"
+    },
+    "c12_fortaleza" : {
+        "name":"Fortaleza",
+        "image":"img/c12_fortaleza.png"
+    },
+    "c13_fortaleza" : {
+        "name":"Fortaleza",
+        "image":"img/c13_fortaleza.png"
     }
 }
