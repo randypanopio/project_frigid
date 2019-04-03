@@ -10,10 +10,11 @@ The scene display timeline:
 
 var stats = {
 	partyCount:16,
-	powerCount:10,
-	foodCount:10,
+	powerCount:12,
+	foodCount:12,
 	day:0,
-	hasScientist:false
+	hasScientist:false,
+	hasDogs:false
 }
 
 var matsUpdateSubstring = "$";
@@ -27,7 +28,9 @@ var foodGainSubstring = "@fg:";
 var powerLossSubstring = "@pl:";
 var foodLossSubstring = "@fl:";
 var gainScientist = "&sci";
+var gainDogs = "&dog";
 var bothGainSubstring = "@bg:";
+var endSubstring = "*end";
 
 var dayStringElement = document.getElementById('days');
 var partyStringElement = document.getElementById('party');
@@ -69,9 +72,21 @@ function onSceneDisplayed(scene)
 
 function onChoiceClicked(targetSceneId)
 {
+	if(targetSceneId.toLowerCase().includes(endSubstring)){
+		stats.foodCount =1;
+		stats.powerCount =1;
+		foodStringElement.innerHTML = stats.foodCount;
+		powerStringElement.innerHTML = stats.powerCount;
+	}
+
 	if(targetSceneId.toLowerCase().includes(gainScientist)){
-			stats.gainScientist = true;
+			stats.hasScientist = true;
 			console.log("got scientist")
+	}
+
+	if(targetSceneId.toLowerCase().includes(gainDogs)){
+			stats.hasDogs = true;
+			console.log("got dogs")
 	}
 
 	if(targetSceneId.toLowerCase().includes(matsUpdateSubstring)) {
@@ -112,7 +127,7 @@ function onChoiceClicked(targetSceneId)
 	if(targetSceneId.toLowerCase().includes(bothGainSubstring)) {
 		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(bothGainSubstring) + 4));
 		stats.powerCount += toAdd;
-		stats.foodCount += toLose;
+		stats.foodCount += toAdd;
 		powerStringElement.innerHTML = stats.powerCount;
 		foodStringElement.innerHTML = stats.foodCount;
 	}

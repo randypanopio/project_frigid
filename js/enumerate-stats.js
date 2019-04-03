@@ -2,8 +2,8 @@
 
 var defaultStats = {
   partyCount:16,
-	powerCount:10,
-	foodCount:10,
+	powerCount:12,
+	foodCount:12,
 	day:0,
   hasScientist:false
 }

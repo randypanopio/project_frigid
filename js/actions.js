@@ -13,9 +13,13 @@ function executeStringAction(action)
 function executeNumberAction(action)
 {
   var key = action.options[0].toLowerCase();
+  console.log(key);
   var operator = action.options[1];
+  console.log(operator);
   var value = parseInt(action.options[2]);
-  
+  console.log(value);
+  debugger
+
   if(!(key in variables))
   {
     variables[key] = 0;
@@ -50,7 +54,7 @@ function executeApprovalAction(action)
   var character = action.options[0].toLowerCase();
   var operator = action.options[1];
   var value = parseInt(action.options[2]);
-  
+
   if(!(character in characters))
   {
     console.error("Character does not exist: "+character);
@@ -82,7 +86,7 @@ function executeCustomAction(action)
   if(type in customActions)
   {
     customActions[type](action);
-  } else 
+  } else
   {
     console.error("Unsupported action type: "+action.type);
   }

@@ -38,7 +38,7 @@ function displayCharacter(characterData)
     //Create a character element and set its background before adding it to the scene
     var characterElement = $("<div class='character'></div>");
     characterElement.css({"background-image": "url('"+character.poses[characterData.pose]+"')"});
-    $("#sceneContent").append(characterElement);  
+    $("#sceneContent").append(characterElement);
   }
 
   //Custom code that executes after showing a character be called now
@@ -86,7 +86,7 @@ function displayPlace(placeId)
     return;
   }
   var place = places[placeId];
-  
+
   //Show its name
   $("#placeName").html(place.name);
   //Set the place attribute in the container for custom CSS rules to apply
@@ -106,7 +106,7 @@ function displayBackground(url)
 }
 
 function displayScene(sceneId)
-{	
+{
   //Clear the scene
 	clearScene();
 
