@@ -62,5 +62,93 @@
     "a12_sinaloa" : {
         "name":"Bunker",
         "image":"img/a12_sinaloa.png"
+    },
+    "e_generic_gain" : {
+        "name":"Bunker",
+        "image":"img/e_generic_gain.png"
+    },
+    "a13_mexico" : {
+        "name":"MexicoCity",
+        "image":"img/a13_mexico.png"
+    },
+    "b1_mexico" : {
+        "name":"MexicoCity",
+        "image":"img/b1_mexico.png"
+    },
+    "b2_mexico" : {
+        "name":"MexicoCity",
+        "image":"img/b2_mexico.png"
+    },
+    "b3_mexico" : {
+        "name":"MexicoCity",
+        "image":"img/b3_mexico.png"
+    },
+    "e_generic_leave" : {
+        "name":"MexicoCity",
+        "image":"img/e_generic_leave.png"
+    },
+    "b3b_oaxaca" : {
+        "name":"Oaxaca",
+        "image":"img/b3b_oaxaca.png"
+    },
+    "b4_oaxaca" : {
+        "name":"Oaxaca",
+        "image":"img/b4_oaxaca.png"
+    },
+    "e_generic_scavenge" : {
+        "name":"Oaxaca",
+        "image":"img/e_generic_scavenge.png"
+    },
+    "b5_honduras" : {
+        "name":"Honduras",
+        "image":"img/b5_honduras.png"
+    },
+    "b5a_honduras" : {
+        "name":"Honduras",
+        "image":"img/b5a_honduras.png"
+    },
+    "b6_honduras" : {
+        "name":"Honduras",
+        "image":"img/b6_honduras.png"
+    },
+    "b6a_honduras" : {
+        "name":"Honduras",
+        "image":"img/b6a_honduras.png"
+    },
+    "b7_costarica" : {
+        "name":"Honduras",
+        "image":"img/b7_costarica.png"
+    },
+    "b7a_costarica" : {
+        "name":"Honduras",
+        "image":"img/b7a_costarica.png"
+    },
+    "b8_panama" : {
+        "name":"PanamaCity",
+        "image":"img/b8_panama.png"
+    },
+    "b9_tunnel" : {
+        "name":"Tunnel",
+        "image":"img/b9_tunnel.png"
+    },
+    "b10_tunnel" : {
+        "name":"Tunnel",
+        "image":"img/b10_tunnel.png"
+    },
+    "b10a_tunnel" : {
+        "name":"Tunnel",
+        "image":"img/b10a_tunnel.png"
+    },
+    "b11_tunnel" : {
+        "name":"Tunnel",
+        "image":"img/b11_tunnel.png"
+    },
+    "b12_tunnel" : {
+        "name":"Tunnel",
+        "image":"img/b12_tunnel.png"
+    },
+    "b13_tunnel" : {
+        "name":"PowerGrid",
+        "image":"img/b13_tunnel.png"
     }
 }
