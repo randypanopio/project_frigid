@@ -10,9 +10,11 @@ The scene display timeline:
 
 var stats = {
 	partyCount:16,
-	powerCount:10,
-	foodCount:10,
-	day:0
+	powerCount:12,
+	foodCount:12,
+	day:0,
+	hasScientist:false,
+	hasDogs:false
 }
 
 var matsUpdateSubstring = "$";
@@ -25,6 +27,10 @@ var powerGainSubstring = "@pg:";
 var foodGainSubstring = "@fg:";
 var powerLossSubstring = "@pl:";
 var foodLossSubstring = "@fl:";
+var gainScientist = "&sci";
+var gainDogs = "&dog";
+var bothGainSubstring = "@bg:";
+var endSubstring = "*end";
 
 var dayStringElement = document.getElementById('days');
 var partyStringElement = document.getElementById('party');
@@ -66,6 +72,23 @@ function onSceneDisplayed(scene)
 
 function onChoiceClicked(targetSceneId)
 {
+	if(targetSceneId.toLowerCase().includes(endSubstring)){
+		stats.foodCount =1;
+		stats.powerCount =1;
+		foodStringElement.innerHTML = stats.foodCount;
+		powerStringElement.innerHTML = stats.powerCount;
+	}
+
+	if(targetSceneId.toLowerCase().includes(gainScientist)){
+			stats.hasScientist = true;
+			console.log("got scientist")
+	}
+
+	if(targetSceneId.toLowerCase().includes(gainDogs)){
+			stats.hasDogs = true;
+			console.log("got dogs")
+	}
+
 	if(targetSceneId.toLowerCase().includes(matsUpdateSubstring)) {
 		stats.foodCount -=1;
 		stats.powerCount -=1;
@@ -74,31 +97,39 @@ function onChoiceClicked(targetSceneId)
 	}
 
 	if(targetSceneId.toLowerCase().includes(foodGainSubstring)) {
-		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@fg:") + 4));
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(foodGainSubstring) + 4));
 		stats.foodCount += toAdd;
 		foodStringElement.innerHTML = stats.foodCount;
 		// console.log(stats.foodCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(powerGainSubstring)) {
-		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@pg:") + 4));
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(powerGainSubstring) + 4));
 		stats.powerCount += toAdd;
 		powerStringElement.innerHTML = stats.powerCount;
 		// console.log(stats.powerCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(foodLossSubstring)) {
-		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@fl:") + 4));
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf(foodLossSubstring) + 4));
 		stats.foodCount -= toLose;
 		foodStringElement.innerHTML = stats.foodCount;
 		// console.log(stats.foodCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(powerLossSubstring)) {
-		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@pl:") + 4));
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf(powerLossSubstring) + 4));
 		stats.powerCount -= toLose;
 		powerStringElement.innerHTML = stats.powerCount;
 		// console.log(stats.powerCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(bothGainSubstring)) {
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(bothGainSubstring) + 4));
+		stats.powerCount += toAdd;
+		stats.foodCount += toAdd;
+		powerStringElement.innerHTML = stats.powerCount;
+		foodStringElement.innerHTML = stats.foodCount;
 	}
 
 
@@ -115,14 +146,14 @@ function onChoiceClicked(targetSceneId)
 
 	if(targetSceneId.toLowerCase().includes(deathFlag)){
 		// console.log(stats.partyCount);
-		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf("%die:") + 5));
+		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf(deathFlag) + 5));
 		// console.log(toRemove);
 		stats.partyCount -= toRemove;
 		partyStringElement.innerHTML = stats.partyCount;
 	}
 
 	if(targetSceneId.toLowerCase().includes(gainFlag)){
-		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("%gain:") + 6));
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(gainFlag) + 6));
 		stats.partyCount += toAdd;
 		partyStringElement.innerHTML = stats.partyCount;
 	}

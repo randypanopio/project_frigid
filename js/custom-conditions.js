@@ -19,16 +19,61 @@ var evaluateRandomCondition = function(condition)
 var myCustomCondition = function(condition)
 {
 	var result = false;
-	
+
 	//Do something here?
 
 	return result;
 }
 */
 
+var evaluateFoodMatsCondition = function (condition) {
+	if(stats.foodCount >= (7)){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+var evaluatePowerMatsCondition = function (condition) {
+	if(stats.powerCount >= (7)){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+var evaluateCheckScientist = function (condition) {
+	if(stats.hasScientist == true) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+var evaluateCheckDogs = function (condition) {
+	if(stats.hasDogs == true) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+var evaluateCheckFail = function (condition) {
+	if(stats.hasScientist == false && stats.hasDogs == false) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 //A dictionary of all the known custom conditions, and the function they use to be evaluated.
 //Don't forget to add your own "name":function pairs here, too!
 var customConditions = {
   "random":evaluateRandomCondition,
   /* "custom":myCustomCondition, */
+	"mats_food":evaluateFoodMatsCondition,
+	"mats_power":evaluatePowerMatsCondition,
+	"check_scientist":evaluateCheckScientist,
+	"check_dogs":evaluateCheckDogs,
+	"check_fail":evaluateCheckFail,
 };
