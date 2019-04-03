@@ -27,6 +27,7 @@ var foodGainSubstring = "@fg:";
 var powerLossSubstring = "@pl:";
 var foodLossSubstring = "@fl:";
 var gainScientist = "&sci";
+var bothGainSubstring = "@bg:";
 
 var dayStringElement = document.getElementById('days');
 var partyStringElement = document.getElementById('party');
@@ -81,31 +82,39 @@ function onChoiceClicked(targetSceneId)
 	}
 
 	if(targetSceneId.toLowerCase().includes(foodGainSubstring)) {
-		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@fg:") + 4));
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(foodGainSubstring) + 4));
 		stats.foodCount += toAdd;
 		foodStringElement.innerHTML = stats.foodCount;
 		// console.log(stats.foodCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(powerGainSubstring)) {
-		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("@pg:") + 4));
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(powerGainSubstring) + 4));
 		stats.powerCount += toAdd;
 		powerStringElement.innerHTML = stats.powerCount;
 		// console.log(stats.powerCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(foodLossSubstring)) {
-		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@fl:") + 4));
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf(foodLossSubstring) + 4));
 		stats.foodCount -= toLose;
 		foodStringElement.innerHTML = stats.foodCount;
 		// console.log(stats.foodCount);
 	}
 
 	if(targetSceneId.toLowerCase().includes(powerLossSubstring)) {
-		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf("@pl:") + 4));
+		var toLose = Number(targetSceneId.substring(targetSceneId.indexOf(powerLossSubstring) + 4));
 		stats.powerCount -= toLose;
 		powerStringElement.innerHTML = stats.powerCount;
 		// console.log(stats.powerCount);
+	}
+
+	if(targetSceneId.toLowerCase().includes(bothGainSubstring)) {
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(bothGainSubstring) + 4));
+		stats.powerCount += toAdd;
+		stats.foodCount += toLose;
+		powerStringElement.innerHTML = stats.powerCount;
+		foodStringElement.innerHTML = stats.foodCount;
 	}
 
 
@@ -122,14 +131,14 @@ function onChoiceClicked(targetSceneId)
 
 	if(targetSceneId.toLowerCase().includes(deathFlag)){
 		// console.log(stats.partyCount);
-		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf("%die:") + 5));
+		var toRemove = Number(targetSceneId.substring(targetSceneId.indexOf(deathFlag) + 5));
 		// console.log(toRemove);
 		stats.partyCount -= toRemove;
 		partyStringElement.innerHTML = stats.partyCount;
 	}
 
 	if(targetSceneId.toLowerCase().includes(gainFlag)){
-		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf("%gain:") + 6));
+		var toAdd = Number(targetSceneId.substring(targetSceneId.indexOf(gainFlag) + 6));
 		stats.partyCount += toAdd;
 		partyStringElement.innerHTML = stats.partyCount;
 	}
